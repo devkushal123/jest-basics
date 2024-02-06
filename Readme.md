@@ -1,4 +1,4 @@
-
+Reffered Video - https://www.youtube.com/watch?v=5QRx-i5jVNw
 Reference jest document - 
     https://jestjs.io/docs/getting-started
 
@@ -27,4 +27,16 @@ Reference jest document -
 - *** mockResolveValue vs mockResolveValueOnce 
 
 
-=== jest.spion
+4. === jest.spyOn
+    By default, jest.spyOn also calls the spied method. This is different behavior from most other test libraries. If you want to overwrite the original function, you can use jest.spyOn(object, methodName).mockImplementation(() => customImplementation) or object[methodName] = jest.fn(() => customImplementation).
+
+    ex- jest.mock("crypto") is mocking entire module but if we want to mock specific function then  we can use jest.spyOn("scrypto", "randomebytes");
+
+5. "describe" and "it" block
+    -- describe(name, fn) creates a block that groups together several related tests. 
+    -- For example, if you have a myBeverage object that is supposed to be delicious but not sour, you could test it with:
+    -- we can use it in place of test inside describe.
+
+6. beforeEach, afterEach, beforeAll and afterAll
+
+Reference document for allglobals as above - https://jestjs.io/docs/api
