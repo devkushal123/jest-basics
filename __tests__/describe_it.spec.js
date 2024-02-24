@@ -20,6 +20,8 @@ afterEach(()=>{
 describe('my beverage', () => {
     test('is delicious', () => {
         expect(myBeverage.delicious).toBeTruthy();
+        expect(myBeverage.delicious).not.toBeFalsy();
+        expect(myBeverage.delicious).toBe(true);
     });
 
     test('is not sour', () => {

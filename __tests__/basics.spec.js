@@ -6,9 +6,10 @@ test("Check addition", ()=>{
 //assertions
 test("null", ()=>{
     const i = null;
-    expect.assertions(2);
+    expect.assertions(3);
     expect(i).toBeNull();
     expect(i).toBeDefined();
+    expect(i).not.toBeUndefined();
 })
 
 //how to test array 
@@ -16,6 +17,10 @@ const animals = ["cat", "dog"];
 test("Animal check", ()=>{
     expect(animals).toContain("dog");  
     expect(animals).toBeInstanceOf(Array);
+    expect(animals).toBeInstanceOf(Object);
+    expect(animals).toEqual(["cat", "dog"]);
+    expect(animals).toEqual(expect.arrayContaining(["cat"]));
+    expect(animals).toEqual(expect.arrayContaining([expect.any(String)])) //to verify array values as string 
 })
 
 // how to test error
